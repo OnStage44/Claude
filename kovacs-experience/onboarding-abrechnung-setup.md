@@ -133,3 +133,14 @@ Muster aus dem Bestand: „Skalar OnBoarding“ 1.785,00 € als Einmalzahlung, 
 | 23.12.2026 | Ende Onboarding-Phase |
 | 01.01.2027 | 1. Monatsrechnung + 1. Abbuchung 3.300 € |
 | 31.12.2028 | Ende Mindestlaufzeit, danach automatisch +12 Monate |
+
+## Ausführung per API
+
+Die Keys für Lexoffice und GoCardless liegen im Drive-Dokument „API Keys“. Die Skripte unter
+`scripts/` führen Schritt 1 (Rechnungsentwurf, keine Mail), die GoCardless-Prüfung (nur lesen)
+und das GoCardless-„Go“ (Einzug und Abo, je mit Rückfrage) aus. Die Serienrechnung muss in
+Lexware Office von Hand angelegt werden, die API kann wiederkehrende Vorlagen nur lesen.
+
+Aus der Claude-Umgebung heraus sind `api.lexoffice.io` und `api.gocardless.com` derzeit durch
+die Netzwerk-Policy gesperrt (403). Nach Freigabe der beiden Hosts können die Skripte auch
+direkt aus der Session laufen.
