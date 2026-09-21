@@ -47,8 +47,8 @@ Das Handelsregister führt noch Theaterstrasse 4, 4051 Basel. Aeschenplatz verwe
 |---|---|
 | Kunde | Kovacs Experience AG (siehe oben; ggf. neu anlegen, Land Schweiz) |
 | Rechnungsdatum | Tag des „Go“ |
-| Titel / Betreff | Car Watch Experience Onboarding |
-| Position 1 | Car Watch Experience Onboarding |
+| Titel / Betreff | Kovacs Experience Onboarding |
+| Position 1 | Kovacs Experience Onboarding |
 | Menge / Einheit | 1 Pauschale |
 | Einzelpreis netto | 1.500,00 € |
 | Positionstext | Einmalige Onboarding-Gebühr gemäß § 3 Abs. 2 des YouTube Content Dienstleistungsvertrags vom 18.09.2026. Umfasst die dreiwöchige Onboarding-Phase (Strategie, Setup, Zugänge, Unterlagen) ab Kick-Off am 02.12.2026. |
@@ -63,7 +63,7 @@ Das Handelsregister führt noch Theaterstrasse 4, 4051 Basel. Aeschenplatz verwe
 |---|---|
 | Kunde | Gábor Kovács (Mandat vom 18.09.2026) |
 | Betrag | 1.500,00 € (bzw. 1.785,00 € falls mit 19 % USt, muss dem Rechnungsbrutto entsprechen) |
-| Beschreibung | Car Watch Experience Onboarding |
+| Beschreibung | Kovacs Experience Onboarding |
 | Referenz | Rechnungsnummer aus Schritt 1 (voraussichtlich RE0515) |
 | Einzugsdatum | frühestmöglich (SEPA: ca. 3 Bankarbeitstage, also ca. 24./25.09.2026) |
 | Kunden-Mail | GoCardless schickt automatisch eine Vorankündigung an den Kunden |
@@ -114,11 +114,9 @@ Muster aus dem Bestand: „Skalar OnBoarding“ 1.785,00 € als Einmalzahlung, 
 2. **Kick-Off-Datum.** Vertrag und Kalender sagen 02.12.2026, also gut zehn Wochen nach
    Unterschrift. Falls eigentlich Oktober gemeint war, verschieben sich Start der Serienrechnung
    und des Dauerauftrags auf 01.11.2026.
-3. **Rechnungsname.** „Car Watch Experience Onboarding“ wie gewünscht übernommen. Die Firma heißt
-   Kovacs Experience AG, bitte bewusst bestätigen.
-4. **Beträge gleich halten.** GoCardless-Einzug muss exakt dem Bruttobetrag der Lexware-Rechnung
+3. **Beträge gleich halten.** GoCardless-Einzug muss exakt dem Bruttobetrag der Lexware-Rechnung
    entsprechen, sonst passt die Zahlung in der Buchhaltung nicht.
-5. **Welche Aktion löst welche Kunden-Mail aus:** Lexware „Rechnung versenden“ (1 Mail),
+4. **Welche Aktion löst welche Kunden-Mail aus:** Lexware „Rechnung versenden“ (1 Mail),
    GoCardless Einzug anlegen (Vorankündigung), GoCardless Abo anlegen (Bestätigung sofort,
    danach vor jeder Abbuchung), jede Serienrechnung (bei automatischem Versand).
 

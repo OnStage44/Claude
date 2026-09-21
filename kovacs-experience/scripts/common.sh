@@ -24,7 +24,7 @@ ONBOARDING_NET=1500.00
 MONTHLY_NET=3300.00
 
 # Bezeichnungen
-ONBOARDING_TITLE="Car Watch Experience Onboarding"
+ONBOARDING_TITLE="Kovacs Experience Onboarding"
 SUBSCRIPTION_NAME="YouTube Growth - Kovacs Experience"
 
 # Termine aus § 4 des Vertrags
