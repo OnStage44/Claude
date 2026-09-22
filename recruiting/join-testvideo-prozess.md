@@ -37,10 +37,11 @@ Was die Routine bei jedem Lauf macht:
    „🎬 Neues Testvideo ist da“ mit Name, Stelle, Link, kurzer Notiz des Kandidaten und Link zum Gmail-Thread.
    Der Post enthält `gmail:<Thread-ID>`; vor jedem Post prüft die Routine, ob diese ID im Kanal schon gemeldet wurde (verhindert Doppelmeldungen).
 3. **Entscheidung per Reaktion.** Wer das Video geprüft hat, reagiert auf den Slack-Post:
-   - 👍 oder ✅ → Routine antwortet dem Kandidaten über den JOIN-Relay mit der Vorlage **„Einladung Kennenlern-Call“** (Calendly).
-   - 👎 oder ❌ → Routine antwortet mit der Vorlage **„Absage + Talent Pool“**.
-   - Die Routine bestätigt im Slack-Thread, was gesendet wurde. Beide Reaktionen gleichzeitig → nichts senden, Rückfrage im Thread.
-4. Nichts Neues → kein Post, keine Mail.
+   - 👍 oder ✅ → Routine legt in Gmail einen Antwort-Entwurf an den Kandidaten (JOIN-Relay-Adresse) mit der Vorlage **„Einladung Kennenlern-Call“** (Calendly) an.
+   - 👎 oder ❌ → Routine legt den Entwurf mit der Vorlage **„Absage + Talent Pool“** an.
+   - Die Routine meldet im Slack-Thread „📝 Entwurf liegt in Gmail“. **Absenden klickt Noah selbst** in Gmail (Entwürfe). Beide Reaktionen gleichzeitig → kein Entwurf, Rückfrage im Thread.
+   - Die Routine sendet selbst keine Mails. Automatischer Versand wurde vom Sicherheitsfilter der Claude-Umgebung abgelehnt; wer das will, muss die Routine mit ausdrücklicher Freigabe neu anlegen.
+4. Nichts Neues → kein Post, kein Entwurf.
 
 Nicht automatisiert (kein JOIN-Zugriff): die Pipeline-Stufe in JOIN wird nicht mitgezogen.
 Das bleibt ein Handgriff in JOIN; bis dahin ist der Slack-Kanal (Post + Thread-Bestätigung) die Sortierung.
@@ -48,7 +49,7 @@ Das bleibt ein Handgriff in JOIN; bis dahin ist der Slack-Kanal (Post + Thread-B
 ## Vorlagen
 
 Rekonstruiert aus versendeten JOIN-Nachrichten (Feb. 2026). Bitte einmal mit den Vorlagen in JOIN
-abgleichen; die Routine nutzt die beiden unteren Texte wörtlich.
+abgleichen; die Routine nutzt die beiden unteren Texte wörtlich für die Entwürfe.
 
 ### Testedit / Testvideo-Einladung (wird in JOIN versendet, Schritt 1)
 
