@@ -1,6 +1,6 @@
 # JOIN – Testvideo-Prozess für die Videoredakteur-Stellen
 
-Stand: 22.09.2026. Ohne JOIN-API (Standard-Plan, API erst ab Advanced) und ohne
+Stand: 22.09.2026, 17:30 Uhr. Schritt 1 wurde am 22.09. ab 15:38 Uhr aus JOIN heraus ausgelöst (Testedit-Einladungen sind raus). Ohne JOIN-API (Standard-Plan, API erst ab Advanced) und ohne
 Zugriff auf join.com aus der Claude-Umgebung. Der Prozess läuft deshalb über
 Gmail (JOIN-Relay) und Slack.
 
@@ -35,7 +35,7 @@ Was die Routine bei jedem Lauf macht:
    (Google Drive, Frame.io, Loom, YouTube, Vimeo, Dropbox, WeTransfer) oder einen Video-Anhang enthalten.
 2. **Slack-Post.** Für jedes neue Testvideo eine Nachricht in #core-team-onstage:
    „🎬 Neues Testvideo ist da“ mit Name, Stelle, Link, kurzer Notiz des Kandidaten und Link zum Gmail-Thread.
-   Der Post enthält `gmail:<Thread-ID>`; vor jedem Post prüft die Routine, ob diese ID im Kanal schon gemeldet wurde (verhindert Doppelmeldungen).
+   Der Post enthält `msg:<Message-ID>` und `gmail:<Thread-ID>`; vor jedem Post prüft die Routine, ob die Message-ID im Kanal schon gemeldet wurde (verhindert Doppelmeldungen). Gmail fasst Antworten verschiedener Kandidaten mit gleichem Betreff in einen Thread, deshalb wird jede Nachricht einzeln bewertet.
 3. **Entscheidung per Reaktion.** Wer das Video geprüft hat, reagiert auf den Slack-Post:
    - 👍 oder ✅ → Routine legt in Gmail einen Antwort-Entwurf an den Kandidaten (JOIN-Relay-Adresse) mit der Vorlage **„Einladung Kennenlern-Call“** (Calendly) an.
    - 👎 oder ❌ → Routine legt den Entwurf mit der Vorlage **„Absage + Talent Pool“** an.
