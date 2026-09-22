@@ -1,4 +1,6 @@
-# Telekom Mobilfunk: Tarif-Optimierung (Stand 21.09.2026)
+# Telekom Mobilfunk: Tarif-Optimierung (Stand 22.09.2026)
+
+**Entscheidung 22.09.2026:** Noah ist 28+, MultiSIM wird weiter gebraucht. Young-Tarife scheiden aus. Die freenet-Aktion „Magenta Mobil M Unlimited 24,95 €“ ist seit 30.06.2026 beendet und im September nicht buchbar. Aktueller Plan: siehe Abschnitt 7.
 
 Ziel: Rufnummer behalten, mehr Datenvolumen, weniger zahlen, höchste verfügbare Geschwindigkeit.
 
@@ -30,8 +32,8 @@ Netz: Telekom ist im connect-Netztest 2026 zum 15. Mal Testsieger, in Berlin vor
 |---|---|---|---|---|---|---|---|---|
 | A | **Telekom MagentaMobil L Young** (Tarifwechsel, nur unter 28) | Telekom | 29,95 € **inkl. MultiSIM** | 200 GB | max. | 24 Mon. oder Flex | bleibt automatisch | 5x Daten, MultiSIM gratis, gleiches Netz, kein Anbieterwechsel. Effektiv 29,95 statt 29,90 (falls MagentaEINS entfällt) bzw. 24,95 (falls er bleibt) |
 | A2 | Telekom MagentaMobil M Young (nur unter 28) | Telekom | 24,95 € + 4,95 € MultiSIM = 29,90 € | 100 GB | max. | 24 Mon. oder Flex | bleibt | 2,5x Daten zum gleichen Preis |
-| B | **freenet „Magenta Mobil M“ Unlimited-Aktion** | Telekom | 24,95 € (+ ca. 4,95 € MultiSIM) | unlimited | 300 Mbit/s | 24 Mon., 0 € Anschluss | Portierung | Bester Preis für Unlimited im Telekom-Netz. Aktion lief zuletzt bis Ende Juni 2026 und wurde mehrfach neu aufgelegt; **Verfügbarkeit heute beim Buchen prüfen**. Nach 24 Monaten 49,95 € und Unlimited entfällt, also rechtzeitig kündigen |
-| B2 | freenet „Magenta Mobil XL“ Unlimited | Telekom | 34,95 € (3 SIM-Karten inkl.) | unlimited | 300 Mbit/s | 24 Mon. | Portierung | Teurer als heute, nur Fallback |
+| B | freenet „Magenta Mobil M“ Unlimited-Aktion | Telekom | 24,95 € | unlimited | 300 Mbit/s | 24 Mon. | Portierung | **Beendet am 30.06.2026, im September 2026 nicht buchbar** |
+| B2 | **freenet „Magenta Mobil XL“ Unlimited** | Telekom | **34,95 € inkl. 2 MultiSIM** (0 € Anschluss) | unlimited | 300 Mbit/s | 24 Mon., ab Monat 25: 84,95 € | Portierung | Laut teltarif Mitte 09/2026 buchbar, Tarifstart bis 30.11.2026 aufschiebbar. 5,05 €/Monat mehr als heute, dafür unlimited statt 40 GB und MultiSIM inklusive. Nach 23 Monaten kündigen |
 | C | **Telekom Rückholangebot** (kündigen, dann verhandeln) | Telekom | Ziel: MagentaMobil M/L ≤ 25 € + MultiSIM gratis | 50–100 GB | max. | 24 Mon. | bleibt | Individuell, nicht garantiert. Hebel: Neukunden-Cashback 240 € (bis 30.09.2026) und freenet-Preise |
 | D | o2 Mobile Unlimited L | o2 | 39,99 € | unlimited | 300 Mbit/s | 24 Mon. | Portierung | Teurer und zweitbestes Netz: nein |
 | D2 | o2 Mobile Unlimited M | o2 | 29,99 € | unlimited | 100 Mbit/s | 24 Mon. | Portierung | Zu langsam für „schnellstmöglich“ |
@@ -102,3 +104,17 @@ Wichtig: Die Kündigung ersetzt nicht die Portierung. Die Portierung beauftragt 
 - Tarifwechsel oder Bestellung erfordern Login in dein Telekom-Kundencenter (2FA-Code an noah@onstage.berlin) bzw. Identitätsprüfung und IBAN beim neuen Anbieter. Das darf ich ohne dein ausdrückliches Go und deine Zugangsdaten nicht ausführen.
 - Die Telekom hat keine Kundenservice-E-Mail mehr; Verhandlungen laufen über Hotline, Chat oder Formular.
 - Die freenet-Websites und Vergleichsportale sind aus meiner Umgebung nicht abrufbar, deshalb konnte ich die tagesaktuelle Buchbarkeit der Unlimited-Aktion nicht bestätigen.
+
+## 7. Umsetzungsplan nach Entscheidung (22.09.2026)
+
+Rahmen: 28+, MultiSIM nötig, Telekom-Netz mit höchster Geschwindigkeit. Ein Angebot „mehr Daten und billiger als 29,90 €“ gibt es im Telekom-Netz derzeit nur über ein individuelles Rückholangebot der Telekom. Die sichere Alternative ist freenet Magenta Mobil XL Unlimited für 34,95 € inkl. 2 MultiSIM.
+
+| Schritt | Was | Wer | Status |
+|---|---|---|---|
+| 1 | Telekom-Kündigung zum nächstmöglichen Termin mit Opt-In Rufnummernmitnahme. Primär über den Kündigungsbutton telekom.de/kuendigung (Login noah.schering@me.com), zusätzlich per E-Mail (Gmail-Entwurf an kuendigung@telekom.de liegt bereit) | Noah (Button) / Claude (E-Mail nach Go) | wartet auf Go |
+| 2 | Tag 1–3 nach Kündigung: Hotline 0800 33 02202 anrufen, „Kundenrückgewinnung“ verlangen, Leitfaden 4.1 nutzen. Zielangebot: MagentaMobil L (100 GB) oder M (50 GB) für max. 29,90 € inkl. MultiSIM, ohne Anschlusspreis | Noah | offen |
+| 3a | Telekom-Angebot ≤ 29,90 € mit ≥ 100 GB inkl. MultiSIM: annehmen, Kündigung zurücknehmen lassen, schriftliche Bestätigung verlangen | Noah | offen |
+| 3b | Kein oder schlechteres Angebot: freenet Magenta Mobil XL Unlimited bestellen (freenet.de → Handytarife ohne Handy → Magenta Mobil XL), Rufnummernmitnahme + 2 MultiSIM (Apple Watch eSIM) im Bestellprozess, Tarifstart auf Vertragsende bei Telekom legen | Noah (Identitätsprüfung, IBAN) | offen |
+| 4 | Nach Portierung: eSIM für Watch neu einrichten, Kalender: freenet-Kündigung spätestens Monat 23 (sonst 84,95 €) | Noah | offen |
+
+Vergleich über 24 Monate: heute 717,60 € für 40 GB. freenet XL 838,80 € für unlimited inkl. 2 MultiSIM. Rückholangebot-Ziel ≤ 717,60 € für ≥ 100 GB.
