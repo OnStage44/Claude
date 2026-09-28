@@ -1,6 +1,9 @@
 # Kovacs Experience AG – Onboarding-Abrechnung (Vorbereitung)
 
-Stand: 21.09.2026. Nichts davon ist ausgeführt oder versendet. Alle Werte sind aus dem
+Stand: 28.09.2026. Rechnung RE0518 wurde am 22.09.2026 versendet, der GoCardless-Einzug ist am
+23./24.09.2026 bankseitig fehlgeschlagen. Zahlungsweg für Schweizer Kunden siehe
+`schweiz-lastschrift-playbook.md`. Schritte 2 und 3 (GoCardless) entfallen, wenn Gábor auf
+Überweisung plus Dauerauftrag wechselt. Alle Werte sind aus dem
 PandaDoc-Vertrag, dem GoCardless-Postfach und dem Handelsregister zusammengetragen.
 
 ## Quellen
