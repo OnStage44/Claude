@@ -88,3 +88,34 @@ Die E-Mail an Gábor liegt als Entwurf in Gmail (Antwort auf die Rechnungsmail R
 - **GoCardless erneut versuchen ohne Bankfreischaltung**: erzeugt nur weitere Fehlermails beim Kunden.
 - **Schweizer LSV+ / CH-DD**: reines CHF-Verfahren, wird von SIX ohnehin eingestellt und braucht ein Schweizer
   Bankkonto.
+
+## Vorlage: Text des Kunden an seine Bank (nur wenn er Lastschrift will)
+
+Die Bank nimmt eine Freischaltung nur vom Kontoinhaber an. Wir schreiben die Bank nie selbst an. Der Kunde
+braucht dafür zwei Werte aus dem GoCardless-Dashboard (beim Kunden unter dem Mandat): die
+Gläubiger-Identifikationsnummer, unter der GoCardless einzieht, und die Mandatsreferenz.
+
+```
+Betreff: Freischaltung SEPA-Lastschrift auf meinem Euro-Konto
+
+Guten Tag
+
+Ich möchte auf meinem Euro-Konto [IBAN CH…] SEPA-Basislastschriften (SEPA Core Direct Debit) zulassen und den
+folgenden Zahlungsempfänger für Belastungen freigeben:
+
+Zahlungsempfänger: OnStage / Noah Schering, eingezogen über GoCardless SAS, Paris
+Gläubiger-Identifikationsnummer: [aus dem GoCardless-Dashboard]
+Mandatsreferenz: [aus dem GoCardless-Dashboard]
+Betrag: einmalig EUR [Onboarding], danach monatlich EUR [Monatsbetrag] jeweils zum 1. des Monats
+
+Am [Datum] wurde eine Lastschrift dieses Empfängers über EUR [Betrag] zurückgewiesen. Bitte teilen Sie mir mit,
+was für die Freischaltung nötig ist (Formular, Ermächtigung im E-Banking) und bestätigen Sie mir, sobald
+Lastschriften dieses Empfängers ausgeführt werden.
+
+Freundliche Grüsse
+[Name]
+[Firma]
+```
+
+Erst nach der Bestätigung der Bank erneut einziehen. Bei Bank Cler, Migros Bank und ZKB gar nicht erst
+versuchen, dort bleibt es bei Überweisung und Dauerauftrag.
