@@ -36,17 +36,34 @@ Was die Routine bei jedem Lauf macht:
 2. **Slack-Post.** Für jedes neue Testvideo eine Nachricht in #core-team-onstage:
    „🎬 Neues Testvideo ist da“ mit Name, Stelle, Link, kurzer Notiz des Kandidaten und Link zum Gmail-Thread.
    Der Post enthält `msg:<Message-ID>` und `gmail:<Thread-ID>`; vor jedem Post prüft die Routine, ob die Message-ID im Kanal schon gemeldet wurde (verhindert Doppelmeldungen). Gmail fasst Antworten verschiedener Kandidaten mit gleichem Betreff in einen Thread, deshalb wird jede Nachricht einzeln bewertet.
-3. **Entscheidung per Reaktion.** Wer das Video geprüft hat, reagiert auf den Slack-Post:
+3. **Eingangsbestätigung an den Kandidaten.** Direkt nach dem Slack-Post antwortet die Routine auf die
+   JOIN-Mail des Kandidaten mit der Vorlage **„Eingangsbestätigung Testedit“** (Danke, ist angekommen, wir melden uns).
+   Das ist die einzige Mail, die die Routine selbst sendet (Entscheidung Noah, 28.09.2026). Im Slack-Thread steht danach
+   „✉️ Eingangsbestätigung gesendet“; fehlt der Eintrag oder steht dort „⚠️ … bitte selbst kurz antworten“, hat der
+   Sicherheitsfilter der Claude-Umgebung den Versand abgelehnt und Noah antwortet selbst in JOIN.
+4. **Entscheidung per Reaktion.** Wer das Video geprüft hat, reagiert auf den Slack-Post:
    - 👍 oder ✅ → Routine legt in Gmail einen Antwort-Entwurf an den Kandidaten (JOIN-Relay-Adresse) mit der Vorlage **„Einladung Kennenlern-Call“** (Calendly) an.
    - 👎 oder ❌ → Routine legt den Entwurf mit der Vorlage **„Absage + Talent Pool“** an.
    - Die Routine meldet im Slack-Thread „📝 Entwurf liegt in Gmail“. **Absenden klickt Noah selbst** in Gmail (Entwürfe). Beide Reaktionen gleichzeitig → kein Entwurf, Rückfrage im Thread.
-   - Die Routine sendet selbst keine Mails. Automatischer Versand wurde vom Sicherheitsfilter der Claude-Umgebung abgelehnt; wer das will, muss die Routine mit ausdrücklicher Freigabe neu anlegen.
-4. Nichts Neues → kein Post, kein Entwurf.
+   - Einladung und Absage sendet die Routine nicht selbst, sie legt nur Entwürfe an.
+5. Nichts Neues → kein Post, keine Mail, kein Entwurf.
 
 Nicht automatisiert (kein JOIN-Zugriff): die Pipeline-Stufe in JOIN wird nicht mitgezogen.
 Das bleibt ein Handgriff in JOIN; bis dahin ist der Slack-Kanal (Post + Thread-Bestätigung) die Sortierung.
 
 ## Vorlagen
+
+### Eingangsbestätigung Testedit (Routine sendet automatisch als Antwort auf die JOIN-Mail)
+
+> Hallo {Vorname},
+>
+> vielen Dank für deinen Testedit – er ist bei uns angekommen.
+>
+> Wir schauen uns alle Einsendungen sorgfältig an und melden uns in den nächsten Tagen mit einer Rückmeldung bei dir.
+>
+> Viele Grüße
+> Noah
+> Team OnStage
 
 Rekonstruiert aus versendeten JOIN-Nachrichten (Feb. 2026). Bitte einmal mit den Vorlagen in JOIN
 abgleichen; die Routine nutzt die beiden unteren Texte wörtlich für die Entwürfe.
