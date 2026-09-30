@@ -53,8 +53,8 @@ Was die Routine bei jedem Lauf macht:
    - Steht im Thread schon „✅“, „📝“ oder „⚠️“, fasst die Routine den Post nicht noch einmal an.
 5. Nichts Neues → kein Post, keine Mail, kein Entwurf.
 
-**Calendly-Event für die Einladung:** „Kennenlern-Call Video Editor (15 Min.)“, Slug `kennenlern-call-video-editor-15-min`,
-15 Minuten, Google Meet, deutsche Buchungsseite; am 30.09.2026 per Calendly-API angelegt, weil das ältere Event
+**Calendly-Event für die Einladung:** „Kennenlern-Call Video Editor (20 Min.)“, Slug `kennenlern-call-video-editor-15-min`,
+20 Minuten, Google Meet, deutsche Buchungsseite (Slug bleibt „…-15-min“, das ist nur der URL-Name); am 30.09.2026 per Calendly-API angelegt, weil das ältere Event
 „OnStage Jobinterview“ als erste Frage eine Pflicht-Telefonnummer hat und die Calendly-API Zusatzfragen nicht anlegen
 kann. Das neue Event hat genau eine optionale Zusatzfrage (Calendly-Standardfrage „Bitte geben Sie alles an, was bei der
 Vorbereitung auf unser Meeting hilfreich sein könnte.“). Die Routine belegt sie über den URL-Parameter `a1` mit
@@ -121,7 +121,7 @@ abgleichen; die Routine nutzt die beiden unteren Texte wörtlich (Einladung wird
 >
 > wir haben uns dein Ergebnis angeschaut - und sind interessiert, dich besser kennenzulernen!
 >
-> Lass uns in einem kurzen Google Meet Call (15 Minuten) checken, ob wir zueinander passen und wie der nächste Schritt für dich aussehen könnte.
+> Lass uns in einem kurzen Google Meet Call (20 Minuten) checken, ob wir zueinander passen und wie der nächste Schritt für dich aussehen könnte.
 >
 > Trag dich einfach über folgenden Link so früh wie möglich in meinen Kalender ein:
 > 👉 {Calendly-Link}
