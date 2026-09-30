@@ -47,11 +47,11 @@ Was die Routine bei jedem Lauf macht:
      Link zum Testvideo und Link zur JOIN-Bewerbungsliste des Jobs (dort liegt der CV) sind als Antwort auf die
      Zusatzfrage des Events (`a1`) und als UTM-Parameter vorbelegt, damit Noah beide Links im Kalendereintrag des Calls
      sieht, wenn der Call stattfindet. Im Slack-Thread steht danach „✅ Einladung zum Kennenlern-Call gesendet“.
-   - 👎 oder ❌ → Routine legt in Gmail einen Antwort-Entwurf mit der Vorlage **„Absage + Talent Pool“** an und meldet im
-     Slack-Thread „📝 Entwurf liegt in Gmail“. **Absenden klickt Noah selbst.**
+   - 👎 oder ❌ → Routine **sendet direkt** die Vorlage **„Absage + Talent Pool“** als Antwort auf die JOIN-Mail des
+     Kandidaten (Entscheidung Noah, 30.09.2026, vorher nur Entwurf). Im Slack-Thread steht danach „🚫 Absage (Talent Pool) gesendet“.
    - Beide Reaktionen gleichzeitig → nichts passiert, Rückfrage im Thread.
-   - Steht im Thread schon „✅“, „📝“ oder „⚠️“, fasst die Routine den Post nicht noch einmal an.
-5. Nichts Neues → kein Post, keine Mail, kein Entwurf.
+   - Steht im Thread schon „✅“, „🚫“, „📝“ (alte Entwürfe) oder „⚠️“, fasst die Routine den Post nicht noch einmal an.
+5. Nichts Neues → kein Post, keine Mail.
 
 **Calendly-Event für die Einladung:** „Kennenlern-Call Video Editor (20 Min.)“, Slug `kennenlern-call-video-editor-15-min`,
 20 Minuten, Google Meet, deutsche Buchungsseite (Slug bleibt „…-15-min“, das ist nur der URL-Name); am 30.09.2026 per Calendly-API angelegt, weil das ältere Event
@@ -82,7 +82,7 @@ Das bleibt ein Handgriff in JOIN; bis dahin ist der Slack-Kanal (Post + Thread-B
 > Team OnStage
 
 Rekonstruiert aus versendeten JOIN-Nachrichten (Feb. 2026). Bitte einmal mit den Vorlagen in JOIN
-abgleichen; die Routine nutzt die beiden unteren Texte wörtlich (Einladung wird gesendet, Absage als Entwurf).
+abgleichen; die Routine nutzt die beiden unteren Texte wörtlich (Einladung und Absage werden direkt gesendet).
 
 ### Testedit / Testvideo-Einladung (wird in JOIN versendet, Schritt 1)
 
@@ -131,7 +131,7 @@ abgleichen; die Routine nutzt die beiden unteren Texte wörtlich (Einladung wird
 > Viele Grüße
 > Noah
 
-### Absage + Talent Pool (Routine legt bei 👎 einen Entwurf an)
+### Absage + Talent Pool (Routine sendet automatisch bei 👎)
 
 > Hallo {Vorname},
 >
