@@ -38,15 +38,26 @@ Was die Routine bei jedem Lauf macht:
    Der Post enthält `msg:<Message-ID>` und `gmail:<Thread-ID>`; vor jedem Post prüft die Routine, ob die Message-ID im Kanal schon gemeldet wurde (verhindert Doppelmeldungen). Gmail fasst Antworten verschiedener Kandidaten mit gleichem Betreff in einen Thread, deshalb wird jede Nachricht einzeln bewertet.
 3. **Eingangsbestätigung an den Kandidaten.** Direkt nach dem Slack-Post antwortet die Routine auf die
    JOIN-Mail des Kandidaten mit der Vorlage **„Eingangsbestätigung Testedit“** (Danke, ist angekommen, wir melden uns).
-   Das ist die einzige Mail, die die Routine selbst sendet (Entscheidung Noah, 28.09.2026). Im Slack-Thread steht danach
+   Diese Mail und die Einladung bei 👍 sind die einzigen Mails, die die Routine selbst sendet (Entscheidungen Noah, 28.09. und 30.09.2026). Im Slack-Thread steht danach
    „✉️ Eingangsbestätigung gesendet“; fehlt der Eintrag oder steht dort „⚠️ … bitte selbst kurz antworten“, hat der
    Sicherheitsfilter der Claude-Umgebung den Versand abgelehnt und Noah antwortet selbst in JOIN.
 4. **Entscheidung per Reaktion.** Wer das Video geprüft hat, reagiert auf den Slack-Post:
-   - 👍 oder ✅ → Routine legt in Gmail einen Antwort-Entwurf an den Kandidaten (JOIN-Relay-Adresse) mit der Vorlage **„Einladung Kennenlern-Call“** (Calendly) an.
-   - 👎 oder ❌ → Routine legt den Entwurf mit der Vorlage **„Absage + Talent Pool“** an.
-   - Die Routine meldet im Slack-Thread „📝 Entwurf liegt in Gmail“. **Absenden klickt Noah selbst** in Gmail (Entwürfe). Beide Reaktionen gleichzeitig → kein Entwurf, Rückfrage im Thread.
-   - Einladung und Absage sendet die Routine nicht selbst, sie legt nur Entwürfe an.
+   - 👍 oder ✅ → Routine **sendet direkt** die Vorlage **„Einladung Kennenlern-Call“** als Antwort auf die JOIN-Mail
+     des Kandidaten (Entscheidung Noah, 30.09.2026). Der Calendly-Link darin ist personalisiert: Name des Kandidaten,
+     Link zum Testvideo und Link zum Gmail-Thread (die JOIN-Konversation) sind als Antworten auf die Zusatzfragen
+     (`a1`, `a2`) und als UTM-Parameter vorbelegt, damit Noah beide Links im Kalendereintrag bzw. in den Calendly-Termindetails
+     sieht, wenn der Call stattfindet. Im Slack-Thread steht danach „✅ Einladung zum Kennenlern-Call gesendet“.
+   - 👎 oder ❌ → Routine legt in Gmail einen Antwort-Entwurf mit der Vorlage **„Absage + Talent Pool“** an und meldet im
+     Slack-Thread „📝 Entwurf liegt in Gmail“. **Absenden klickt Noah selbst.**
+   - Beide Reaktionen gleichzeitig → nichts passiert, Rückfrage im Thread.
+   - Steht im Thread schon „✅“, „📝“ oder „⚠️“, fasst die Routine den Post nicht noch einmal an.
 5. Nichts Neues → kein Post, keine Mail, kein Entwurf.
+
+**Einmalige Einrichtung in Calendly (Noah):** Im Event „onstage-jobinterview“ zwei optionale Zusatzfragen anlegen,
+in dieser Reihenfolge: 1. „Link zum Testedit“, 2. „Link zur Bewerbung (Gmail)“. Calendly füllt sie aus den URL-Parametern
+`a1` und `a2` vor; die Antworten stehen dann im Google-Kalender-Eintrag des Calls. Ohne die Fragen ignoriert Calendly
+`a1`/`a2`, die Links sind dann nur über die UTM-Parameter in den Termindetails in Calendly sichtbar. Einen direkten
+JOIN-Link zur Bewerbung gibt es nicht (JOIN schickt keinen per Mail mit), deshalb dient der Gmail-Thread als Einstieg.
 
 Nicht automatisiert (kein JOIN-Zugriff): die Pipeline-Stufe in JOIN wird nicht mitgezogen.
 Das bleibt ein Handgriff in JOIN; bis dahin ist der Slack-Kanal (Post + Thread-Bestätigung) die Sortierung.
@@ -66,7 +77,7 @@ Das bleibt ein Handgriff in JOIN; bis dahin ist der Slack-Kanal (Post + Thread-B
 > Team OnStage
 
 Rekonstruiert aus versendeten JOIN-Nachrichten (Feb. 2026). Bitte einmal mit den Vorlagen in JOIN
-abgleichen; die Routine nutzt die beiden unteren Texte wörtlich für die Entwürfe.
+abgleichen; die Routine nutzt die beiden unteren Texte wörtlich (Einladung wird gesendet, Absage als Entwurf).
 
 ### Testedit / Testvideo-Einladung (wird in JOIN versendet, Schritt 1)
 
@@ -99,7 +110,7 @@ abgleichen; die Routine nutzt die beiden unteren Texte wörtlich für die Entwü
 > Viele Grüße
 > Team OnStage
 
-### Einladung Kennenlern-Call (Routine, bei 👍)
+### Einladung Kennenlern-Call (Routine sendet automatisch bei 👍; `{Calendly-Link}` = personalisierter Link, siehe Schritt 2, Punkt 4)
 
 > Hallo {Vorname},
 >
@@ -108,14 +119,14 @@ abgleichen; die Routine nutzt die beiden unteren Texte wörtlich für die Entwü
 > Lass uns in einem kurzen Google Meet Call (15 Minuten) checken, ob wir zueinander passen und wie der nächste Schritt für dich aussehen könnte.
 >
 > Trag dich einfach über folgenden Link so früh wie möglich in meinen Kalender ein:
-> 👉 https://calendly.com/noah-schering/onstage-jobinterview
+> 👉 {Calendly-Link}
 >
 > Wir freuen uns auf das Gespräch mit dir!
 >
 > Viele Grüße
 > Noah
 
-### Absage + Talent Pool (Routine, bei 👎)
+### Absage + Talent Pool (Routine legt bei 👎 einen Entwurf an)
 
 > Hallo {Vorname},
 >
