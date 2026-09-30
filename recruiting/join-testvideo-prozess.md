@@ -44,24 +44,25 @@ Was die Routine bei jedem Lauf macht:
 4. **Entscheidung per Reaktion.** Wer das Video geprüft hat, reagiert auf den Slack-Post:
    - 👍 oder ✅ → Routine **sendet direkt** die Vorlage **„Einladung Kennenlern-Call“** als Antwort auf die JOIN-Mail
      des Kandidaten (Entscheidung Noah, 30.09.2026). Der Calendly-Link darin ist personalisiert: Name des Kandidaten,
-     Link zum Testvideo und Link zur JOIN-Bewerbungsliste des Jobs (dort liegt der CV) sind als Antworten auf die
-     Zusatzfragen (`a2`, `a3`) und als UTM-Parameter vorbelegt, damit Noah beide Links im Kalendereintrag bzw. in den
-     Calendly-Termindetails sieht, wenn der Call stattfindet. Im Slack-Thread steht danach „✅ Einladung zum Kennenlern-Call gesendet“.
+     Link zum Testvideo und Link zur JOIN-Bewerbungsliste des Jobs (dort liegt der CV) sind als Antwort auf die
+     Zusatzfrage des Events (`a1`) und als UTM-Parameter vorbelegt, damit Noah beide Links im Kalendereintrag des Calls
+     sieht, wenn der Call stattfindet. Im Slack-Thread steht danach „✅ Einladung zum Kennenlern-Call gesendet“.
    - 👎 oder ❌ → Routine legt in Gmail einen Antwort-Entwurf mit der Vorlage **„Absage + Talent Pool“** an und meldet im
      Slack-Thread „📝 Entwurf liegt in Gmail“. **Absenden klickt Noah selbst.**
    - Beide Reaktionen gleichzeitig → nichts passiert, Rückfrage im Thread.
    - Steht im Thread schon „✅“, „📝“ oder „⚠️“, fasst die Routine den Post nicht noch einmal an.
 5. Nichts Neues → kein Post, keine Mail, kein Entwurf.
 
-**Einmalige Einrichtung in Calendly (Noah):** Das Event „OnStage Jobinterview“ (Slug `onstage-jobinterview`, 20 Min.,
-Google Meet) hat bereits die Pflichtfrage „Phone Number“ an Position 1. Dahinter zwei optionale Fragen vom Typ „One line“
-anhängen, in dieser Reihenfolge: 2. „Link zum Testedit“, 3. „Link zur Bewerbung (JOIN, CV)“. Calendly füllt sie aus den
-URL-Parametern `a2` und `a3` vor; die Antworten stehen dann im Google-Kalender-Eintrag des Calls. Die Calendly-API (und damit
-die Claude-Anbindung) kann Zusatzfragen nicht anlegen, das geht nur in der Calendly-Oberfläche: Event öffnen → „Booking
-page options“ / „Buchungsseite“ → „Invitee questions“ / „Fragen an Eingeladene“ → „Add new question“. Ohne die Fragen
-ignoriert Calendly `a2`/`a3`, die Links sind dann nur über die UTM-Parameter in den Termindetails in Calendly sichtbar. JOIN
-schickt den CV nicht per Mail mit und liefert keinen Link pro Kandidat, deshalb zeigt `a3` auf die Bewerbungsliste des Jobs
-(`https://join.com/jobs/15322023/applications` bzw. `…/15322024/applications`); dort den Namen suchen, der CV liegt in der Bewerbung.
+**Calendly-Event für die Einladung:** „Kennenlern-Call Video Editor (15 Min.)“, Slug `kennenlern-call-video-editor-15-min`,
+15 Minuten, Google Meet, deutsche Buchungsseite; am 30.09.2026 per Calendly-API angelegt, weil das ältere Event
+„OnStage Jobinterview“ als erste Frage eine Pflicht-Telefonnummer hat und die Calendly-API Zusatzfragen nicht anlegen
+kann. Das neue Event hat genau eine optionale Zusatzfrage (Calendly-Standardfrage „Bitte geben Sie alles an, was bei der
+Vorbereitung auf unser Meeting hilfreich sein könnte.“). Die Routine belegt sie über den URL-Parameter `a1` mit
+„Testedit: {Link} | JOIN-Bewerbung (CV): {Link}“ vor; die Antwort steht nach der Buchung im Google-Kalender-Eintrag, in der
+Calendly-Bestätigung und in den Termindetails. Nichts weiter einzurichten. Falls Noah in Calendly weitere Fragen vor diese
+Frage setzt, muss `a1` in der Routine angepasst werden. JOIN schickt den CV nicht per Mail mit und liefert keinen Link pro
+Kandidat, deshalb zeigt der JOIN-Link auf die Bewerbungsliste des Jobs (`https://join.com/jobs/15322023/applications` bzw.
+`…/15322024/applications`); dort den Namen suchen, der CV liegt in der Bewerbung.
 
 Nicht automatisiert (kein JOIN-Zugriff): die Pipeline-Stufe in JOIN wird nicht mitgezogen.
 Das bleibt ein Handgriff in JOIN; bis dahin ist der Slack-Kanal (Post + Thread-Bestätigung) die Sortierung.
