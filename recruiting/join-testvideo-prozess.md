@@ -44,9 +44,9 @@ Was die Routine bei jedem Lauf macht:
 4. **Entscheidung per Reaktion.** Wer das Video geprüft hat, reagiert auf den Slack-Post:
    - 👍 oder ✅ → Routine **sendet direkt** die Vorlage **„Einladung Kennenlern-Call“** als Antwort auf die JOIN-Mail
      des Kandidaten (Entscheidung Noah, 30.09.2026). Der Calendly-Link darin ist personalisiert: Name des Kandidaten,
-     Link zum Testvideo und Link zum Gmail-Thread (die JOIN-Konversation) sind als Antworten auf die Zusatzfragen
-     (`a1`, `a2`) und als UTM-Parameter vorbelegt, damit Noah beide Links im Kalendereintrag bzw. in den Calendly-Termindetails
-     sieht, wenn der Call stattfindet. Im Slack-Thread steht danach „✅ Einladung zum Kennenlern-Call gesendet“.
+     Link zum Testvideo und Link zur JOIN-Bewerbungsliste des Jobs (dort liegt der CV) sind als Antworten auf die
+     Zusatzfragen (`a1`, `a2`) und als UTM-Parameter vorbelegt, damit Noah beide Links im Kalendereintrag bzw. in den
+     Calendly-Termindetails sieht, wenn der Call stattfindet. Im Slack-Thread steht danach „✅ Einladung zum Kennenlern-Call gesendet“.
    - 👎 oder ❌ → Routine legt in Gmail einen Antwort-Entwurf mit der Vorlage **„Absage + Talent Pool“** an und meldet im
      Slack-Thread „📝 Entwurf liegt in Gmail“. **Absenden klickt Noah selbst.**
    - Beide Reaktionen gleichzeitig → nichts passiert, Rückfrage im Thread.
@@ -54,10 +54,11 @@ Was die Routine bei jedem Lauf macht:
 5. Nichts Neues → kein Post, keine Mail, kein Entwurf.
 
 **Einmalige Einrichtung in Calendly (Noah):** Im Event „onstage-jobinterview“ zwei optionale Zusatzfragen anlegen,
-in dieser Reihenfolge: 1. „Link zum Testedit“, 2. „Link zur Bewerbung (Gmail)“. Calendly füllt sie aus den URL-Parametern
+in dieser Reihenfolge: 1. „Link zum Testedit“, 2. „Link zur Bewerbung (JOIN, CV)“. Calendly füllt sie aus den URL-Parametern
 `a1` und `a2` vor; die Antworten stehen dann im Google-Kalender-Eintrag des Calls. Ohne die Fragen ignoriert Calendly
-`a1`/`a2`, die Links sind dann nur über die UTM-Parameter in den Termindetails in Calendly sichtbar. Einen direkten
-JOIN-Link zur Bewerbung gibt es nicht (JOIN schickt keinen per Mail mit), deshalb dient der Gmail-Thread als Einstieg.
+`a1`/`a2`, die Links sind dann nur über die UTM-Parameter in den Termindetails in Calendly sichtbar. JOIN schickt den CV
+nicht per Mail mit und liefert keinen Link pro Kandidat, deshalb zeigt `a2` auf die Bewerbungsliste des Jobs
+(`https://join.com/jobs/15322023/applications` bzw. `…/15322024/applications`); dort den Namen suchen, der CV liegt in der Bewerbung.
 
 Nicht automatisiert (kein JOIN-Zugriff): die Pipeline-Stufe in JOIN wird nicht mitgezogen.
 Das bleibt ein Handgriff in JOIN; bis dahin ist der Slack-Kanal (Post + Thread-Bestätigung) die Sortierung.
