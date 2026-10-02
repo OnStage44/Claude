@@ -2,7 +2,7 @@
 
 Stand: 22.09.2026, 17:30 Uhr. Schritt 1 wurde am 22.09. ab 15:38 Uhr aus JOIN heraus ausgelöst (Testedit-Einladungen sind raus). Ohne JOIN-API (Standard-Plan, API erst ab Advanced) und ohne
 Zugriff auf join.com aus der Claude-Umgebung. Der Prozess läuft deshalb über
-Gmail (JOIN-Relay) und Slack.
+Gmail (eingehend über das JOIN-Relay, ausgehend an die echten Kandidatenadressen) und Slack.
 
 ## Ausgangslage
 
@@ -10,7 +10,7 @@ Gmail (JOIN-Relay) und Slack.
 |---|---|
 | Offene Stellen | „Freelance Video Editor (M/W/D) - Remote“ (Job 15322023), „YouTube Video Cutter (M/W/D) - 100 % remote“ (Job 15322024) |
 | JOIN-Postfach | jobs@onstage.berlin, landet im Gmail von noah@onstage.berlin |
-| Kandidaten-Nachrichten | kommen von `<ID>@onstage.msg.join.com`; eine Gmail-Antwort an diese Adresse erreicht den Kandidaten über JOIN |
+| Kandidaten-Nachrichten | kommen von `<ID>@onstage.msg.join.com` (ID pro Nachricht). Eine Gmail-Antwort an diese Relay-Adresse kommt beim Kandidaten **nicht** an (geprüft 02.10.2026). Alle Mails gehen per `mcp__Gmail__reply` mit `to` = echte Adresse des Kandidaten (aus der zitierten JOIN-Kopfzeile, der Signatur oder einer `mail:`-Antwort von Noah im Slack-Thread) |
 | Slack-Kanal | #core-team-onstage (C0BT83C1RQX) |
 | Gedächtnis der Routine | der Slack-Kanal selbst: jeder Post trägt `gmail:<Thread-ID>`, Entscheidungen stehen als Thread-Antwort darunter (der Gmail-Connector darf keine Labels setzen) |
 
